@@ -1,11 +1,10 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { Categories } from "@/components/shared";
 
 export default function Home() {
   return (
-    <div>
-      <Button>Кнопкка</Button>
-      Главная
-    </div>
+    <>
+      <Categories />
+      <div className="h-[1000px]"></div>
+    </>
   );
 }

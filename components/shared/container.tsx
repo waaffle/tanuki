@@ -1,14 +1,16 @@
 import { cn } from "@/lib/utils";
-import { FC, ReactNode } from "react";
+import { FC, PropsWithChildren, ReactNode } from "react";
 
 interface Props {
   className?: string;
-  children: ReactNode;
 }
 
-export const Container: FC<Props> = ({ className, children }) => {
+export const Container: FC<PropsWithChildren<Props>> = ({
+  className,
+  children,
+}) => {
   return (
-    <div className={cn(className, "max-w-[1400px] mx-auto text-center px-3")}>
+    <div className={cn("max-w-[1400px] px-3 mx-auto", className)}>
       {children}
     </div>
   );

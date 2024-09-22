@@ -22,9 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${robotoFont.variable} antialiased min-h-screen`}>
-        <Header></Header>
-        {children}
+      <body className={`${robotoFont.variable} antialiased`}>
+        <main className="min-h=screen">
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );
