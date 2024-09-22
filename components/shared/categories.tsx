@@ -35,7 +35,7 @@ export const Categories: FC<Props> = ({ className }) => {
   const activeIndex = 0;
 
   return (
-    <div className={cn("sticky top-0  z-10", className)}>
+    <div className={cn("sticky top-0 bg-white z-10", className)}>
       <Container className={"max-w-[1326px]"}>
         <Carousel
           opts={{
