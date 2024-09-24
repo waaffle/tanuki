@@ -7,7 +7,7 @@ interface Props {
   size?: "sm" | "md" | "lg" | "xl" | "2xl";
 }
 
-export const Title: FC<Props> = ({ text, size = "sm", className = "" }) => {
+export const Title: FC<Props> = ({ text, size = "lg", className = "" }) => {
   const type = {
     sm: "h5",
     md: "h4",

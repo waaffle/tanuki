@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <Categories />
       <Container>
-        <div className="flex items-center gap-20">
+        <div className="flex items-center gap-20 mt-8">
           <Filters className="w-[250px]" />
           <div className="flex-1">Товары</div>
         </div>
