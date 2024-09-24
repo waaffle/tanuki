@@ -1,6 +1,7 @@
+"use client";
 import { cn } from "@/lib/utils";
-import { FC } from "react";
-import { FilterCheckbox, Title } from ".";
+import { FC, createRef, useRef } from "react";
+import { FilterCheckbox, RangeSlider, Title } from ".";
 
 interface Props {
   className?: string;
@@ -20,7 +21,9 @@ export const Filters: FC<Props> = ({ className }) => {
         name="news"
         value="2"
         text="Сначала новое"
+        className="mb-6"
       ></FilterCheckbox>
+      <RangeSlider min={0} max={3000} step={10} />
     </div>
   );
 };
