@@ -2,9 +2,27 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/shared";
+import localFont from "next/font/local";
+
+const PTRootUI = localFont({
+  src: [
+    {
+      path: "./fonts/PTRootUI-Regular.woff2",
+      weight: "400",
+    },
+    {
+      path: "./fonts/PTRootUI-Medium.woff2",
+      weight: "500",
+    },
+    {
+      path: "./fonts/PTRootUI-Bold.woff2",
+      weight: "700",
+    },
+  ],
+});
 
 const robotoFont = Roboto({
-  weight: ["400", "700"],
+  weight: ["400", "500", "700", "900"],
   style: ["normal"],
   subsets: ["latin", "cyrillic"],
   variable: "--font-roboto",
@@ -22,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${robotoFont.variable} antialiased`}>
+      <body className={`${PTRootUI.className} antialiased`}>
         <main className="min-h=screen">
           <Header />
           {children}

@@ -52,7 +52,7 @@ export const Categories: FC<Props> = ({ className }) => {
                 <a>
                   <Button
                     variant={activeIndex === index ? "secondary" : "outline"}
-                    className={"rounded-2xl text-base"}
+                    className={"rounded-2xl text-lg "}
                     key={index}
                   >
                     {cat}

@@ -16,11 +16,11 @@ export const Title: FC<Props> = ({ text, size = "lg", className = "" }) => {
     "2xl": "h1",
   };
   const fontStyle = {
-    sm: "font-medium text-sm",
-    md: "font-medium text-base",
-    lg: "font-medium text-lg",
-    xl: "font-semibold text-2xl",
-    "2xl": "font-semibold text-4xl",
+    sm: "font-medium text-sm text-black",
+    md: "font-medium text-base text-black",
+    lg: "font-medium text-lg text-black",
+    xl: "font-medium text-2xl text-black",
+    "2xl": "font-medium text-4xl text-black",
   };
   return createElement(
     type[size],
