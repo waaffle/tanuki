@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const ProductCard: FC<Props> = ({ className, product }) => {
-  const { name, price, likes, weight, feature, description, imageUrl } =
+  const { name, id, price, likes, weight, feature, description, imageUrl } =
     product;
 
   const likesToStr = (likes: number) => {
@@ -44,46 +44,52 @@ export const ProductCard: FC<Props> = ({ className, product }) => {
         className
       )}
     >
-      <Link href="#" className="relative">
-        <Image
-          className="pt-3"
-          src={imageUrl}
-          width={500}
-          height={500}
-          alt={name}
-        />
-        {feature && (
-          <div className="absolute left-3 bottom-0">
-            <Image
-              src={getFeatureUrl(feature)}
-              width={30}
-              height={30}
-              alt={feature}
-              className="border rounded-lg p-1"
-            />
-          </div>
-        )}
-      </Link>
-      <div className="p-3 ">
-        <div className="flex items-center gap-3 mb-2">
-          <div>{weight} г</div>
-          {likes && (
-            <div className="flex items-center gap-1 border p-0.5 rounded-lg">
+      <Link href={`/product/${id}`}>
+        <div className="relative">
+          <Image
+            priority={true}
+            className="pt-3 mb-2"
+            src={imageUrl}
+            width={500}
+            height={500}
+            alt={name}
+          />
+          {feature && (
+            <div className="absolute left-3 bottom-0">
               <Image
-                src="https://tanukifamily.ru/static/media/thumbup.40975529.avif"
-                width={15}
-                height={15}
-                alt="like"
+                src={getFeatureUrl(feature)}
+                width={30}
+                height={30}
+                alt={feature}
+                className="border rounded-lg p-1"
               />
-              {likesToStr(likes)}
             </div>
           )}
         </div>
-        <Title text={name} size="md" className="font-bold" />
-        <div className="mb-5">{description}</div>
+        <div className="px-3">
+          <div className="flex items-center gap-3 mb-2">
+            <div>{weight} г</div>
+            {likes && (
+              <div className="flex items-center gap-1 border p-0.5 rounded-lg">
+                <Image
+                  src="https://tanukifamily.ru/static/media/thumbup.40975529.avif"
+                  width={15}
+                  height={15}
+                  alt="like"
+                />
+                {likesToStr(likes)}
+              </div>
+            )}
+          </div>
+          <Title text={name} size="md" className="font-bold" />
+          <div className="mb-4">{description}</div>
+        </div>
+      </Link>
+      <div className="px-2">
         <Button
           variant="secondary"
-          className="w-full rounded-full hover:bg-background hover:border hover:border-black transition-all duration-300 h-10 mb-1"
+          className="w-full rounded-full hover:bg-background hover:border hover:border-black transition-all duration-300 h-10 mb-4"
+          onClick={() => alert("Kkkk")}
         >
           <div className="font-bold text-lg">{price} ₽</div>
         </Button>

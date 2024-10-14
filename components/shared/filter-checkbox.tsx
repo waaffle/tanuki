@@ -1,35 +1,40 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import { Checkbox } from "../ui";
 import { cn } from "@/lib/utils";
 
 interface Props {
-  className?: string;
-  name: string;
   value: string;
   text: string;
+  endAdornment?: ReactNode;
+  onCheckedChange?: (checked: boolean) => void;
+  checked?: boolean;
 }
 
-export const FilterCheckbox: FC<Props> = ({ className, name, value, text }) => {
-  const [checked, setChecked] = useState(false);
-  const onCheckedChange = () => {
-    setChecked((state) => !state);
-  };
+export const FilterCheckbox: FC<Props> = ({
+  value,
+  text,
+  endAdornment,
+  onCheckedChange,
+  checked,
+}) => {
   return (
-    <div className={cn("flex items-center gap-1 space-x-2", className)}>
+    <div className={cn("flex items-center space-x-2")}>
       <Checkbox
-        id={name}
         value={value}
         checked={checked}
         onCheckedChange={onCheckedChange}
+        className="rounded-[8px] w-6 h-6"
+        id={`checkbox-${String(value)}`}
       />
       <label
-        htmlFor={name}
-        className="text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+        htmlFor={`checkbox-${String(value)}`}
+        className="text-lg leading-none font-medium flex-1 cursor-pointer"
       >
         {text}
       </label>
+      {endAdornment}
     </div>
   );
 };

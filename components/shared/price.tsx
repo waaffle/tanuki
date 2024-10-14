@@ -27,8 +27,20 @@ export const Price: FC<Props> = ({ className }) => {
     <div className={cn("border-t-2 mb-5", className)}>
       <Title className="mt-5" size="xl" text="Цена от и до:" />
       <div className="flex gap-3 mt-5">
-        <Input placeholder={String(min)} onChange={minChange} />
-        <Input placeholder={String(max)} onChange={maxChange} />
+        <Input
+          type="number"
+          min={0}
+          max={3000}
+          placeholder={String(min)}
+          onChange={minChange}
+        />
+        <Input
+          type="number"
+          min={0}
+          max={3000}
+          placeholder={String(max)}
+          onChange={maxChange}
+        />
       </div>
       <RangeSlider
         onValueChange={onValueChange}

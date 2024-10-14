@@ -1,4 +1,5 @@
 export type Product = {
+    id: string;
     name: string;
     price: number;
     likes?: number;
@@ -7,3 +8,8 @@ export type Product = {
     description: string;
     imageUrl: string;
 };
+
+export type Group = {
+    title: string,
+    value: number
+}
