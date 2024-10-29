@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { FC, createRef, useRef } from "react";
-import { FilterCheckbox, Price, RangeSlider, Title } from ".";
+import { FC } from "react";
+import { FilterCheckbox, Price, Title } from ".";
 
 interface Props {
   className?: string;
