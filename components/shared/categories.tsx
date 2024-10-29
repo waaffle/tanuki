@@ -119,7 +119,7 @@ export const Categories: FC<Props> = ({ className }) => {
               <a href={`/#${name}`}>
                 <Button
                   variant={currentCategory === id ? "secondary" : "outline"}
-                  className={"rounded-2xl text-xl text-muted-foreground"}
+                  className={"rounded-2xl text-xl text-grey"}
                   key={index}
                 >
                   {name}

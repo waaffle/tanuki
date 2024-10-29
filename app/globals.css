@@ -59,6 +59,7 @@ body {
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     /* --ring: 240 5.9% 10%; */
+    --grey: 0 0% 30%;
     --ring: 0 0% 61.97%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
@@ -75,5 +76,8 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .disabled-class {
+    opacity: 0;
   }
 }

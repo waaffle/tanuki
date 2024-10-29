@@ -82,7 +82,7 @@ export const ProductCard: FC<Props> = ({ className, product }) => {
             )}
           </div>
           <Title text={name} size="md" className="font-bold" />
-          <div className="mb-4">{description}</div>
+          <div className="mb-4 text-grey">{description}</div>
         </div>
       </Link>
       <div className="px-2">

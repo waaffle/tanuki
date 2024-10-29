@@ -26,33 +26,6 @@ export const ProductsGroupList: FC<Props> = ({
     (state) => state.setCurrentCategory
   );
 
-  // function handleIntersect(entries: IntersectionObserverEntry[]) {
-  //   entries.forEach((entry, index) => {
-  //     console.log(entry);
-  //     if (entry.isIntersecting) {
-  //       setCurrentCategory(index);
-  //       console.log(currentCategory);
-  //     }
-  //   });
-  // }
-
-  // const options = {
-  //   root: null,
-  //   rootMargin: "0px",
-  //   threshold: 0.5,
-  // };
-
-  // const intersectionRef = useRef(null);
-  // const [entry, setEntry] = useState<IntersectionObserverEntry[]>([]);
-  // const observer = useIntersectionObserver(
-  //   intersectionRef,
-  //   (entry) => {
-  //     setEntry(entry);
-  //     handleIntersect(entry);
-  //   },
-  //   options
-  // );
-
   const intersectionRef = useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0.4,
