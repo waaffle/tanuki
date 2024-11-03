@@ -144,16 +144,6 @@ const rolls = [
   },
 ];
 
-const groups = [
-  {
-    title: "Роллы",
-    value: 1,
-  },
-  {
-    title: "Суши",
-    value: 2,
-  },
-];
 
 export const Products: FC<Props> = ({ className }) => {
   return (
